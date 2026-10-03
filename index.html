@@ -64,8 +64,8 @@ section{padding-block:44px;border-top:1px solid var(--rule);display:grid;gap:24p
 .specs dd{margin:0;font-variant-numeric:tabular-nums}
 .item .sub{margin:6px 0 0;color:var(--muted);font-size:15px}
 .phases{margin:0 0 14px;padding:0;list-style:none;counter-reset:ph;display:grid;gap:6px;font-size:14px}
-.phases li{counter-increment:ph;display:grid;grid-template-columns:28px 1fr;gap:4px 8px;padding-block:6px;border-top:1px dashed var(--rule)}
-.phases li::before{content:counter(ph);font:500 12px/1.6 var(--mono);color:var(--copper)}
+.phases li{counter-increment:ph;position:relative;padding:6px 0 6px 36px;border-top:1px dashed var(--rule)}
+.phases li::before{content:counter(ph);position:absolute;left:0;top:6px;font:500 12px/1.6 var(--mono);color:var(--copper)}
 .phases b{font-weight:600;margin-right:6px}
 .about{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px 40px}
 .about p{margin:0 0 14px;max-width:62ch}
