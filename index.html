@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ruiheng Jia Engineering</title>
+<meta name="description" content="Ruiheng (Peter) Jia, JMU engineering student. Electrical engineering intern candidate for Summer 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#F2F5F1; --panel:#E7ECE6; --ink:#15211B; --muted:#56655D; --rule:#C6D0C8;
+  --mask:#1E6E4E; --copper:#A9652F; --focus:#1E6E4E;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#0D1914; --panel:#13241C; --ink:#E4ECE7; --muted:#98AAA0; --rule:#274236;
+    --mask:#5FC49A; --copper:#D8925A; --focus:#5FC49A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#0D1914; --panel:#13241C; --ink:#E4ECE7; --muted:#98AAA0; --rule:#274236;
+  --mask:#5FC49A; --copper:#D8925A; --focus:#5FC49A;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);padding-inline:20px;padding-block:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:920px;margin:0 auto}
+a{color:var(--mask);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+.label{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.02}
+.hero{padding-block:56px 20px;display:grid;gap:18px}
+.hero h1{font-weight:700;font-size:clamp(52px,11vw,104px);letter-spacing:-.01em;text-transform:uppercase}
+.hero h1 span{color:var(--muted);font-weight:500}
+.lede{font-size:clamp(18px,2.4vw,21px);max-width:34ch;margin:0}
+.status{display:flex;flex-wrap:wrap;gap:8px 20px}
+.status div{display:flex;gap:8px;align-items:baseline}
+.status b{font:500 14px/1.4 var(--mono);color:var(--ink)}
+.trace{width:100%;height:auto;display:block;margin-top:10px}
+.trace path{fill:none;stroke:var(--copper);stroke-width:2.5;stroke-linejoin:round}
+.trace circle{fill:var(--paper);stroke:var(--copper);stroke-width:2.5}
+.trace text{fill:var(--muted);font:500 11px var(--mono);letter-spacing:.06em}
+section{padding-block:44px;border-top:1px solid var(--rule);display:grid;gap:24px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(30px,5vw,40px);font-weight:600;text-transform:uppercase;letter-spacing:.01em}
+.work{display:grid;gap:0}
+.item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:14px 36px;padding-block:26px;border-bottom:1px solid var(--rule)}
+.item:first-child{padding-top:4px}
+.item:last-child{border-bottom:0}
+.item h3{font-size:28px;font-weight:600}
+.item .ref{font:500 12px/1.4 var(--mono);color:var(--copper);letter-spacing:.06em;margin-bottom:6px}
+.item p{margin:0 0 12px;max-width:62ch}
+.specs{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px;margin:0;font-size:14px}
+.specs dt{font:500 12px/1.9 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.specs dd{margin:0;font-variant-numeric:tabular-nums}
+.item .sub{margin:6px 0 0;color:var(--muted);font-size:15px}
+.phases{margin:0 0 14px;padding:0;list-style:none;counter-reset:ph;display:grid;gap:6px;font-size:14px}
+.phases li{counter-increment:ph;display:grid;grid-template-columns:28px 1fr;gap:4px 8px;padding-block:6px;border-top:1px dashed var(--rule)}
+.phases li::before{content:counter(ph);font:500 12px/1.6 var(--mono);color:var(--copper)}
+.phases b{font-weight:600;margin-right:6px}
+.about{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px 40px}
+.about p{margin:0 0 14px;max-width:62ch}
+.facts{display:grid;gap:14px;align-content:start}
+.fact .num{font:600 40px/1 var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+.fact .what{font-size:14px;color:var(--muted)}
+.contact-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.email{font:500 clamp(18px,3vw,24px)/1.3 var(--mono);color:var(--ink);word-break:break-all;user-select:all}
+.btn{font:500 13px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:0;padding:12px 16px;border-radius:3px;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--mask)}
+.copied{font:500 13px var(--mono);color:var(--mask)}
+.titleblock{margin-block:8px 48px;border:1.5px solid var(--ink);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));font:500 12px/1.4 var(--mono)}
+.titleblock div{padding:10px 12px;border-right:1px solid var(--ink);display:grid;gap:2px}
+.titleblock div:last-child{border-right:0}
+.titleblock span{color:var(--muted);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:720px){
+  .item,.about{grid-template-columns:1fr}
+  .titleblock{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .titleblock div{border-bottom:1px solid var(--ink)}
+  .titleblock div:nth-child(2n){border-right:0}
+  .titleblock div:last-child{grid-column:1/-1;border-bottom:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="label">Electrical engineering intern candidate · Summer 2027</div>
+    <h1>Ruiheng <span>(Peter)</span> Jia</h1>
+    <p class="lede">Engineering student at James Madison University. I build, wire, and debug hardware, and I write the code that runs it.</p>
+    <div class="status">
+      <div><span class="label">Degree</span><b>B.S. Engineering, CS minor</b></div>
+      <div><span class="label">Grad</span><b>May 2029</b></div>
+      <div><span class="label">Based</span><b>Harrisonburg &amp; Aldie, VA</b></div>
+    </div>
+    <svg class="trace" viewBox="0 0 920 64" role="img" aria-label="A square-wave signal trace">
+      <circle cx="8" cy="40" r="5"/>
+      <path d="M13 40 H120 V14 H200 V40 H280 V14 H360 V40 H440 V14 H520 V40 H600 V14 H680 V40 H907"/>
+      <circle cx="912" cy="40" r="5"/>
+      <text x="124" y="60">TP1</text><text x="872" y="60">TP2</text>
+    </svg>
+  </header>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="sec-head"><h2 id="work-h">Selected work</h2><span class="label">5 projects</span></div>
+    <div class="work">
+      <article class="item">
+        <div><div class="ref">ENGR 112 · SPRING 2026</div><h3>HAZBOT</h3><p class="sub">Autonomous hazard-detecting robot</p></div>
+        <div>
+          <p>A four-person team build. HAZBOT drives a hazard course on its own, reads its sensors in real time, and reacts at each zone with lights, a buzzer, and turn signals. The hardest part for me was the Arduino code: getting sensors and motors to behave on real hardware.</p>
+          <ol class="phases">
+            <li><b>Obstacle</b> Blue LED past 1 ft, red LED and buzzer inside 1 ft, then stop and turn 90°</li>
+            <li><b>Precision travel</b> Drive exactly 5 ft, then turn 90° right</li>
+            <li><b>Heat zone</b> Above 35 °C, blink red and speed through</li>
+            <li><b>Voice command</b> Mic reading above 600 of 1023 stops the bot and turns it</li>
+            <li><b>VOC evacuation</b> Air quality index of 3 or higher sends it back toward the finish</li>
+            <li><b>Finish</b> Stop within 15 cm of the wall, green LED</li>
+          </ol>
+          <dl class="specs">
+            <dt>Controller</dt><dd>SparkFun RedBoard (Arduino Uno compatible)</dd>
+            <dt>Sensors</dt><dd>HC-SR04 ultrasonic, ENS160 + BME280 over I2C, analog mic</dd>
+            <dt>Drive</dt><dd>2 DC motors on a TB6612FNG driver</dd>
+            <dt>Build</dt><dd>SolidWorks parametric parts, 3D-printed mounts</dd>
+            <dt>Fixes</dt><dd>Startup false zeros, left/right motor drift, sensor warm-up</dd>
+            <dt>Code</dt><dd><a href="https://github.com/pjia01/hazbot">github.com/pjia01/hazbot</a></dd>
+          </dl>
+        </div>
+      </article>
+      <article class="item">
+        <div><div class="ref">ENGR 231 · FALL 2026</div><h3>5-Axis Robotic Arm</h3></div>
+        <div>
+          <p>A semester team build in Engineering Design I. Three of us are assembling, wiring, and programming an Arduino-based 5-axis arm from an Adeept kit.</p>
+          <dl class="specs">
+            <dt>Status</dt><dd>In progress</dd>
+            <dt>Team</dt><dd>3 students</dd>
+            <dt>Platform</dt><dd>Arduino</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="item">
+        <div><div class="ref">ENGR 212L · PROJECT 1A · FALL 2026</div><h3>Truss Bridge Physical Model</h3></div>
+        <div>
+          <p>A physical model of the Grant Road bridge, a through Pratt truss, built for the Statics and Solid Mechanics lab. The project covers how two-force members fail in tension, compression, and buckling.</p>
+          <dl class="specs">
+            <dt>Structure</dt><dd>Through Pratt truss</dd>
+            <dt>Material</dt><dd>File-folder stock (Ressler method)</dd>
+            <dt>Analysis</dt><dd>Tension, compression, buckling</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="item">
+        <div><div class="ref">VOLUNTEER · 2024 TO 2025</div><h3>Live Event A/V Systems</h3></div>
+        <div>
+          <p>I ran sound, projection, and lighting for youth events at ParkValley ministry in Haymarket, VA. When something failed mid-event, I traced cables, inputs, and settings until I found the fault.</p>
+          <dl class="specs">
+            <dt>Events</dt><dd>50, about 75 attendees each</dd>
+            <dt>Live fixes</dt><dd>20+ (feedback, lost video, missed cues)</dd>
+            <dt>Setup</dt><dd>Done 30 min before doors, every event</dd>
+            <dt>Hours</dt><dd>170+ over 20 months</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="item">
+        <div><div class="ref">PERSONAL PROJECT</div><h3>Text Humanizer</h3></div>
+        <div>
+          <p>A tool built on the Anthropic API that rewrites AI-generated text so it reads the way a person writes.</p>
+          <dl class="specs">
+            <dt>Built with</dt><dd>Anthropic Claude API</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="sec-head"><h2 id="about-h">About</h2></div>
+    <div class="about">
+      <div>
+        <p>I'm a second-year engineering student at JMU, leaning toward electrical engineering. My coursework this term covers statics and solid mechanics with a lab, engineering design, and project management.</p>
+        <p>Most of what I know about electronics so far I learned hands-on: running live event systems where a dead signal had to be found in minutes. I want an internship where I can pair that habit with real circuit and hardware work.</p>
+        <p>Outside class I've worked in cleaning and at a movie theater, with zero safety incidents and a balanced cash drawer. I hold CPR/AED certification.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="num">50</div><div class="what">live events run on sound, video, and lighting</div></div>
+        <div class="fact"><div class="num">20+</div><div class="what">faults traced and fixed during events</div></div>
+        <div class="fact"><div class="num">250+</div><div class="what">volunteer hours</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="sec-head"><h2 id="contact-h">Contact</h2><span class="label">Open to Summer 2027 internships</span></div>
+    <div class="contact-row">
+      <span class="email" id="email">pjia1271@gmail.com</span>
+      <button class="btn" id="copy-email" type="button">Copy email</button>
+      <a class="btn" href="https://github.com/pjia01">GitHub</a>
+      <span class="copied" id="copied" hidden>Copied</span>
+    </div>
+  </section>
+
+  <footer class="titleblock" aria-label="Page details">
+    <div><span>Drawn by</span>R. JIA</div>
+    <div><span>School</span>JMU ENGINEERING</div>
+    <div><span>Rev</span>D</div>
+    <div><span>Date</span>2026-10-03</div>
+    <div><span>Sheet</span>1 OF 1</div>
+  </footer>
+</div>
+
+<script>
+document.getElementById('copy-email').addEventListener('click', function(){
+  var t = document.getElementById('email'), ok = document.getElementById('copied');
+  var done = function(){ ok.hidden = false; setTimeout(function(){ ok.hidden = true; }, 1800); };
+  var select = function(){ var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try {
+    navigator.clipboard.writeText(t.textContent).then(done, select);
+  } catch(e){ select(); }
+});
+</script>
+</body>
+</html>
